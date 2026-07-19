@@ -212,3 +212,100 @@ if (kategoriProduk) {
     });
 
 }
+// =========================
+// MASTER PRODUK
+// =========================
+
+const saveProduct = document.getElementById("saveProduct");
+
+if (saveProduct) {
+
+    saveProduct.onclick = function () {
+
+        const kode = document.getElementById("kodeProduk").value.trim();
+        const nama = document.getElementById("namaProduk").value.trim();
+        const kategori = document.getElementById("kategoriProduk").value;
+        const harga = document.getElementById("hargaProduk").value;
+        const stok = document.getElementById("stokProduk").value;
+
+        if (
+            kode === "" ||
+            nama === "" ||
+            kategori === "" ||
+            harga === "" ||
+            stok === ""
+        ) {
+            alert("Lengkapi semua data!");
+            return;
+        }
+
+        daftarProduk.push({
+            kode,
+            nama,
+            kategori,
+            harga,
+            stok,
+            status: "Aktif"
+        });
+
+        simpanProduk();
+        tampilProduk();
+
+        document.getElementById("productModal").classList.remove("active");
+    };
+
+}
+
+function tampilProduk() {
+
+    const produkTable = document.getElementById("produkTable");
+
+    if (!produkTable) return;
+
+    produkTable.innerHTML = "";
+
+    if (daftarProduk.length === 0) {
+
+        produkTable.innerHTML = `
+        <tr>
+            <td colspan="7" class="empty">
+                Belum ada produk
+            </td>
+        </tr>`;
+
+        return;
+    }
+
+    daftarProduk.forEach(function(produk,index){
+
+        produkTable.innerHTML += `
+        <tr>
+            <td>${produk.kode}</td>
+            <td>${produk.nama}</td>
+            <td>${produk.kategori}</td>
+            <td>Rp ${Number(produk.harga).toLocaleString("id-ID")}</td>
+            <td>${produk.stok}</td>
+            <td>${produk.status}</td>
+            <td>
+                <button onclick="hapusProduk(${index})">
+                    Hapus
+                </button>
+            </td>
+        </tr>`;
+    });
+
+}
+
+function hapusProduk(index){
+
+    daftarProduk.splice(index,1);
+
+    simpanProduk();
+
+    tampilProduk();
+
+}
+
+window.hapusProduk = hapusProduk;
+
+tampilProduk();
