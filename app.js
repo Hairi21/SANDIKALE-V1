@@ -133,3 +133,26 @@ function hapusKategori(index) {
 }
 
 tampilKategori();
+// TAMPILKAN KATEGORI DI MASTER PRODUK
+const kategoriProduk = document.getElementById("kategoriProduk");
+
+if (kategoriProduk) {
+
+    kategoriProduk.innerHTML =
+        '<option value="">Pilih Kategori</option>';
+
+    const daftarKategori =
+        JSON.parse(localStorage.getItem("kategori")) || [];
+
+    daftarKategori.forEach(function(kategori) {
+
+        const option = document.createElement("option");
+
+        option.value = kategori;
+        option.textContent = kategori;
+
+        kategoriProduk.appendChild(option);
+
+    });
+
+}
