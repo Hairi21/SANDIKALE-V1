@@ -61,7 +61,14 @@ if (openCategoryModal && closeCategoryModal && categoryModal) {
     });
 
 }
+// SIMPAN KATEGORI
+const saveCategory = document.getElementById("saveCategory");
+const namaKategori = document.getElementById("namaKategori");
+const kategoriTable = document.getElementById("kategoriTable");
 
+saveCategory.onclick = function () {
+    ...
+}
 saveCategory.onclick = function () {
 
     const nama = namaKategori.value.trim();
