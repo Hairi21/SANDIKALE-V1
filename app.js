@@ -1,3 +1,14 @@
+// DATABASE KATEGORI
+let daftarKategori =
+    JSON.parse(localStorage.getItem("kategori")) || [];
+
+function simpanKategori() {
+    localStorage.setItem(
+        "kategori",
+        JSON.stringify(daftarKategori)
+    );
+}
+
 // SIDEBAR
 const menuButton = document.getElementById("menuButton");
 const sidebar = document.getElementById("sidebar");
