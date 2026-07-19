@@ -257,3 +257,70 @@ if (saveProduct) {
     };
 
 }
+function tampilProduk() {
+
+    const produkTable = document.getElementById("produkTable");
+
+    if (!produkTable) return;
+
+    const daftarProduk =
+        JSON.parse(localStorage.getItem("produk")) || [];
+
+    produkTable.innerHTML = "";
+
+    if (daftarProduk.length === 0) {
+
+        produkTable.innerHTML = `
+        <tr>
+            <td colspan="7" class="empty">
+                Belum ada produk
+            </td>
+        </tr>`;
+
+        return;
+    }
+
+    daftarProduk.forEach(function(produk, index){
+
+        produkTable.innerHTML += `
+        <tr>
+
+            <td>${produk.kode}</td>
+
+            <td>${produk.nama}</td>
+
+            <td>${produk.kategori}</td>
+
+            <td>Rp ${Number(produk.harga).toLocaleString("id-ID")}</td>
+
+            <td>${produk.stok}</td>
+
+            <td>${produk.status}</td>
+
+            <td>
+                <button onclick="hapusProduk(${index})">
+                    Hapus
+                </button>
+            </td>
+
+        </tr>`;
+    });
+
+}
+function hapusProduk(index){
+
+    let daftarProduk =
+        JSON.parse(localStorage.getItem("produk")) || [];
+
+    daftarProduk.splice(index, 1);
+
+    localStorage.setItem(
+        "produk",
+        JSON.stringify(daftarProduk)
+    );
+
+    tampilProduk();
+
+}
+
+tampilProduk();
