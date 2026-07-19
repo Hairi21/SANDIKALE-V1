@@ -382,3 +382,36 @@ padding:60px;
 color:#777;
 
 }
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modalContent {
+    background: #222;
+    padding: 24px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.modalContent input,
+.modalContent select {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+}
+
+.modalAction {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
