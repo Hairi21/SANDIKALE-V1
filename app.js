@@ -86,3 +86,103 @@ window.addEventListener("click",function(e){
     }
 
 });
+// =========================
+// MASTER KATEGORI
+// =========================
+
+const saveCategory =
+document.getElementById("saveCategory");
+
+const namaKategori =
+document.getElementById("namaKategori");
+
+const kategoriTable =
+document.getElementById("kategoriTable");
+
+function tampilKategori(){
+
+    if(!kategoriTable) return;
+
+    kategoriTable.innerHTML="";
+
+    if(daftarKategori.length===0){
+
+        kategoriTable.innerHTML=`
+        <tr>
+            <td colspan="3" class="empty">
+                Belum ada kategori
+            </td>
+        </tr>`;
+
+        return;
+    }
+
+    daftarKategori.forEach(function(kategori,index){
+
+        kategoriTable.innerHTML+=`
+        <tr>
+
+            <td>${index+1}</td>
+
+            <td>${kategori}</td>
+
+            <td>
+
+                <button onclick="hapusKategori(${index})">
+
+                    Hapus
+
+                </button>
+
+            </td>
+
+        </tr>`;
+    });
+
+}
+
+function hapusKategori(index){
+
+    daftarKategori.splice(index,1);
+
+    simpanKategori();
+
+    tampilKategori();
+
+}
+
+window.hapusKategori=hapusKategori;
+
+if(saveCategory){
+
+    saveCategory.onclick=function(){
+
+        const nama=namaKategori.value.trim();
+
+        if(nama===""){
+
+            alert("Nama kategori wajib diisi!");
+
+            return;
+
+        }
+
+        daftarKategori.push(nama);
+
+        simpanKategori();
+
+        tampilKategori();
+
+        namaKategori.value="";
+
+        if(categoryModal){
+
+            categoryModal.classList.remove("active");
+
+        }
+
+    };
+
+}
+
+tampilKategori();
