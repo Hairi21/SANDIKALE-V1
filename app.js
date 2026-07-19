@@ -28,3 +28,25 @@ if (openModal && closeModal && productModal) {
         }
     };
 }
+// MODAL TAMBAH KATEGORI
+const openCategoryModal = document.getElementById("openCategoryModal");
+const closeCategoryModal = document.getElementById("closeCategoryModal");
+const categoryModal = document.getElementById("categoryModal");
+
+if (openCategoryModal && closeCategoryModal && categoryModal) {
+
+    openCategoryModal.onclick = function () {
+        categoryModal.classList.add("active");
+    };
+
+    closeCategoryModal.onclick = function () {
+        categoryModal.classList.remove("active");
+    };
+
+    window.addEventListener("click", function (e) {
+        if (e.target === categoryModal) {
+            categoryModal.classList.remove("active");
+        }
+    });
+
+}
