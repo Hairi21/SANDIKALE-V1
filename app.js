@@ -89,3 +89,45 @@ if (saveCategory && namaKategori && kategoriTable) {
     };
 
 }
+// SIMPAN KATEGORI
+const saveCategory = document.getElementById("saveCategory");
+const namaKategori = document.getElementById("namaKategori");
+const kategoriTable = document.getElementById("kategoriTable");
+
+let nomorKategori = 1;
+
+if (saveCategory && namaKategori && kategoriTable) {
+
+    saveCategory.onclick = function () {
+
+        const nama = namaKategori.value.trim();
+
+        if (nama === "") {
+            alert("Nama kategori wajib diisi!");
+            return;
+        }
+
+        // Hapus tulisan "Belum ada kategori"
+        if (kategoriTable.querySelector(".empty")) {
+            kategoriTable.innerHTML = "";
+        }
+
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${nomorKategori++}</td>
+            <td>${nama}</td>
+            <td>
+                <button>Hapus</button>
+            </td>
+        `;
+
+        kategoriTable.appendChild(row);
+
+        namaKategori.value = "";
+
+        categoryModal.classList.remove("active");
+
+    };
+
+}
