@@ -62,45 +62,23 @@ if (openCategoryModal && closeCategoryModal && categoryModal) {
 
 }
 
-// SIMPAN KATEGORI
-const saveCategory = document.getElementById("saveCategory");
-const namaKategori = document.getElementById("namaKategori");
-const kategoriTable = document.getElementById("kategoriTable");
+saveCategory.onclick = function () {
 
-let nomorKategori = 1;
+    const nama = namaKategori.value.trim();
 
-if (saveCategory && namaKategori && kategoriTable) {
+    if (nama === "") {
+        alert("Nama kategori wajib diisi!");
+        return;
+    }
 
-    saveCategory.onclick = function () {
+    daftarKategori.push(nama);
 
-        const nama = namaKategori.value.trim();
+    simpanKategori();
 
-        if (nama === "") {
-            alert("Nama kategori wajib diisi!");
-            return;
-        }
+    tampilKategori();
 
-        // Hapus tulisan "Belum ada kategori"
-        if (kategoriTable.querySelector(".empty")) {
-            kategoriTable.innerHTML = "";
-        }
+    namaKategori.value = "";
 
-        const row = document.createElement("tr");
+    categoryModal.classList.remove("active");
 
-        row.innerHTML = `
-            <td>${nomorKategori++}</td>
-            <td>${nama}</td>
-            <td>
-                <button>Hapus</button>
-            </td>
-        `;
-
-        kategoriTable.appendChild(row);
-
-        namaKategori.value = "";
-
-        categoryModal.classList.remove("active");
-
-    };
-
-}
+};
