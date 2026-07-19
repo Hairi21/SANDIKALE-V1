@@ -66,26 +66,29 @@ const saveCategory = document.getElementById("saveCategory");
 const namaKategori = document.getElementById("namaKategori");
 const kategoriTable = document.getElementById("kategoriTable");
 
-saveCategory.onclick = function () {
+if (saveCategory && namaKategori && kategoriTable) {
 
-    const nama = namaKategori.value.trim();
+    saveCategory.onclick = function () {
 
-    if (nama === "") {
-        alert("Nama kategori wajib diisi!");
-        return;
-    }
+        const nama = namaKategori.value.trim();
 
-    daftarKategori.push(nama);
+        if (nama === "") {
+            alert("Nama kategori wajib diisi!");
+            return;
+        }
 
-    simpanKategori();
+        daftarKategori.push(nama);
 
-    tampilKategori();
+        simpanKategori();
 
-    namaKategori.value = "";
+        tampilKategori();
 
-    categoryModal.classList.remove("active");
+        namaKategori.value = "";
 
-};
+        categoryModal.classList.remove("active");
+
+    };
+
 function tampilKategori() {
 
     if (!kategoriTable) return;
