@@ -164,3 +164,86 @@ header{
     font-weight:600;
 
 }
+/* ==========================
+   SIDEBAR
+========================== */
+
+.sidebar{
+
+    position:fixed;
+
+    top:0;
+
+    left:-270px;
+
+    width:260px;
+
+    height:100vh;
+
+    background:#1A1A1A;
+
+    border-right:1px solid #2C2C2C;
+
+    transition:.3s;
+
+    padding-top:25px;
+
+    z-index:1000;
+
+}
+
+.sidebar.active{
+
+    left:0;
+
+}
+
+.brand{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.brand img{
+
+    width:70px;
+
+}
+
+.brand h2{
+
+    margin-top:10px;
+
+    font-family:'Bebas Neue',sans-serif;
+
+    color:#E8DFC7;
+
+    letter-spacing:2px;
+
+}
+
+.sidebar a{
+
+    display:block;
+
+    padding:16px 25px;
+
+    color:#C7C2B8;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    transition:.2s;
+
+}
+
+.sidebar a:hover{
+
+    background:#8E1E24;
+
+    color:white;
+
+}
