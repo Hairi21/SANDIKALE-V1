@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
 
 <meta charset="UTF-8">
@@ -9,9 +8,10 @@
 <title>SANDIKALE V1</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 
@@ -19,59 +19,64 @@
 
 <body>
 
-<div class="wrapper">
+<header>
 
-    <img src="assets/logo.png" class="logo">
+<button id="menuButton">
 
-    <h1>SANDIKALE</h1>
+☰
 
-    <p class="subtitle">
-        Luxury POS System
-    </p>
+</button>
 
-    <div class="dashboard">
+</header>
 
-        <div class="card">
-            <h2>Produk</h2>
-            <span id="totalProduk">0</span>
-        </div>
+<div class="logoArea">
 
-        <div class="card">
-            <h2>Customer</h2>
-            <span id="totalCustomer">0</span>
-        </div>
+<img src="assets/logo.png" class="logo">
 
-        <div class="card">
-            <h2>Transaksi</h2>
-            <span id="totalTransaksi">0</span>
-        </div>
+<h1>SANDIKALE</h1>
 
-        <div class="card">
-            <h2>Penjualan</h2>
-            <span id="totalPenjualan">Rp 0</span>
-        </div>
-
-    </div>
-
-    <div class="menu">
-
-        <button>MASTER PRODUK</button>
-
-        <button>MASTER CUSTOMER</button>
-
-        <button>KASIR</button>
-
-        <button>TRANSAKSI</button>
-
-        <button>LAPORAN</button>
-
-        <button>SETTING</button>
-
-    </div>
+<p>Luxury POS System</p>
 
 </div>
+
+<section class="dashboard">
+
+<div class="card">
+
+<h2>Produk</h2>
+
+<span>0</span>
+
+</div>
+
+<div class="card">
+
+<h2>Customer</h2>
+
+<span>0</span>
+
+</div>
+
+<div class="card">
+
+<h2>Transaksi</h2>
+
+<span>0</span>
+
+</div>
+
+<div class="card">
+
+<h2>Penjualan</h2>
+
+<span>Rp0</span>
+
+</div>
+
+</section>
 
 <script src="app.js"></script>
 
 </body>
+
 </html>
