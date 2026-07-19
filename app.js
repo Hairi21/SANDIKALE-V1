@@ -1,3 +1,4 @@
+alert("app.js berhasil dimuat");
 // DATABASE KATEGORI
 let daftarKategori =
     JSON.parse(localStorage.getItem("kategori")) || [];
