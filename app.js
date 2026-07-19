@@ -247,7 +247,7 @@ if (kategoriProduk) {
 // =========================
 // MASTER PRODUK
 // =========================
-
+let editIndex = -1;
 const saveProduct = document.getElementById("saveProduct");
 
 if (saveProduct) {
