@@ -121,7 +121,6 @@ function tampilKategori() {
     });
 
 }
-
 function hapusKategori(index) {
 
     daftarKategori.splice(index, 1);
@@ -133,6 +132,9 @@ function hapusKategori(index) {
 }
 
 tampilKategori();
+
+} // <- tutup if (saveCategory && namaKategori && kategoriTable)
+
 // TAMPILKAN KATEGORI DI MASTER PRODUK
 const kategoriProduk = document.getElementById("kategoriProduk");
 
