@@ -250,7 +250,7 @@ if (saveProduct) {
             "produk",
             JSON.stringify(daftarProduk)
         );
-
+tampilProduk();
         alert("Produk berhasil disimpan");
 
         productModal.classList.remove("active");
