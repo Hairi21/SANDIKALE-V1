@@ -46,18 +46,19 @@ header{
     padding:0 25px;
 
 }
-
 #menuButton{
 
+    position: relative;
+    z-index: 2001;
+
     background:none;
-
     border:none;
-
     color:var(--title);
-
     font-size:30px;
-
     cursor:pointer;
+
+}
+
 
 }
 
