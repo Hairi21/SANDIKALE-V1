@@ -209,7 +209,6 @@ tampilProduk();
 
 }
 
-}
 function tampilProduk() {
 
     const produkTable = document.getElementById("produkTable");
