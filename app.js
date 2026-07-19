@@ -43,7 +43,37 @@ if(menuButton && sidebar){
     });
 
 }
+// =========================
+// MODAL PRODUK
+// =========================
 
+const openModal = document.getElementById("openModal");
+const closeModal = document.getElementById("closeModal");
+const productModal = document.getElementById("productModal");
+
+if (openModal && productModal) {
+
+    openModal.onclick = function () {
+        productModal.classList.add("active");
+    };
+
+}
+
+if (closeModal && productModal) {
+
+    closeModal.onclick = function () {
+        productModal.classList.remove("active");
+    };
+
+}
+
+window.addEventListener("click", function (e) {
+
+    if (e.target === productModal) {
+        productModal.classList.remove("active");
+    }
+
+});
 // =========================
 // MODAL KATEGORI
 // =========================
