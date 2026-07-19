@@ -201,7 +201,7 @@ if (saveProduct) {
         });
 
         simpanProduk();
-
+tampilProduk();
         alert("Produk berhasil disimpan");
 
         productModal.classList.remove("active");
