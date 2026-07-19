@@ -82,3 +82,47 @@ saveCategory.onclick = function () {
     categoryModal.classList.remove("active");
 
 };
+function tampilKategori() {
+
+    if (!kategoriTable) return;
+
+    kategoriTable.innerHTML = "";
+
+    if (daftarKategori.length === 0) {
+        kategoriTable.innerHTML = `
+        <tr>
+            <td colspan="3" class="empty">
+                Belum ada kategori
+            </td>
+        </tr>`;
+        return;
+    }
+
+    daftarKategori.forEach((nama, index) => {
+
+        kategoriTable.innerHTML += `
+        <tr>
+            <td>${index + 1}</td>
+            <td>${nama}</td>
+            <td>
+                <button onclick="hapusKategori(${index})">
+                    Hapus
+                </button>
+            </td>
+        </tr>`;
+
+    });
+
+}
+
+function hapusKategori(index) {
+
+    daftarKategori.splice(index, 1);
+
+    simpanKategori();
+
+    tampilKategori();
+
+}
+
+tampilKategori();
