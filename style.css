@@ -410,3 +410,52 @@ color:#777;
     justify-content: flex-end;
     gap: 10px;
 }
+.sidebarLogo{
+    width:70px;
+}
+
+.page{
+    width:95%;
+    max-width:1200px;
+    margin:0 auto;
+    padding:30px 0 60px;
+}
+
+.pageTitle{
+    color:var(--title);
+}
+
+.modalContent h2{
+    color:var(--title);
+    margin-bottom:20px;
+    font-family:'Cormorant Garamond',serif;
+}
+
+.modalContent input{
+    background:#202020;
+    border:1px solid #303030;
+    color:#fff;
+    border-radius:10px;
+}
+
+.modalAction button:first-child{
+    background:#444;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+td button{
+    background:#8E1E24;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    padding:8px 16px;
+    cursor:pointer;
+}
+
+td button:hover{
+    background:#a6252d;
+}
