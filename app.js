@@ -66,8 +66,6 @@ const saveCategory = document.getElementById("saveCategory");
 const namaKategori = document.getElementById("namaKategori");
 const kategoriTable = document.getElementById("kategoriTable");
 
-saveCategory.onclick = function () {
-    ...
 }
 saveCategory.onclick = function () {
 
