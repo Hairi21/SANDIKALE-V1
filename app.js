@@ -322,5 +322,7 @@ function hapusProduk(index){
     tampilProduk();
 
 }
+// Tambahkan baris ini
+window.hapusProduk = hapusProduk;
 
 tampilProduk();
