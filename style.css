@@ -1,70 +1,121 @@
+/* ===========================
+   SANDIKALE PROJECT V1
+   Luxury Design System
+=========================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-body{
+:root{
 
-    background:#171717;
-    color:#F5F0DA;
+    --bg:#121212;
+    --surface:#1A1A1A;
+    --border:#2C2C2C;
 
-    font-family:Arial,sans-serif;
+    --primary:#8E1E24;
+
+    --title:#E8DFC7;
+    --text:#C7C2B8;
+    --muted:#8E8A82;
 
 }
 
-.wrapper{
+body{
 
-    width:95%;
-    max-width:1200px;
+    background:var(--bg);
 
-    margin:auto;
+    color:var(--text);
 
-    padding:40px 20px;
+    font-family:'Inter',sans-serif;
+
+}
+
+/* HEADER */
+
+header{
+
+    height:70px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:0 25px;
+
+}
+
+#menuButton{
+
+    background:none;
+
+    border:none;
+
+    color:var(--title);
+
+    font-size:30px;
+
+    cursor:pointer;
+
+}
+
+/* LOGO */
+
+.logoArea{
 
     text-align:center;
+
+    margin-top:10px;
 
 }
 
 .logo{
 
-    width:130px;
+    width:120px;
 
     margin-bottom:20px;
 
 }
 
-h1{
+.logoArea h1{
 
     font-family:'Bebas Neue',sans-serif;
 
     font-size:70px;
 
-    letter-spacing:4px;
-
-    color:#F5F0DA;
-
-}
-
-.subtitle{
-
-    font-family:"Times New Roman",serif;
-
-    font-size:20px;
-
     letter-spacing:5px;
 
-    color:#B5161B;
-
-    margin-bottom:40px;
+    color:var(--title);
 
 }
+
+.logoArea p{
+
+    margin-top:8px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:26px;
+
+    color:var(--muted);
+
+}
+
+/* DASHBOARD */
 
 .dashboard{
 
+    width:95%;
+
+    max-width:1200px;
+
+    margin:50px auto;
+
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
 
     gap:20px;
 
@@ -72,23 +123,33 @@ h1{
 
 .card{
 
-    background:#242424;
+    background:var(--surface);
 
-    border:2px solid #B5161B;
+    border:1px solid var(--border);
 
-    border-radius:15px;
+    border-radius:18px;
 
-    padding:25px;
+    padding:28px;
+
+    transition:.25s;
+
+}
+
+.card:hover{
+
+    border-color:var(--primary);
+
+    transform:translateY(-4px);
 
 }
 
 .card h2{
 
-    font-family:'Bebas Neue',sans-serif;
+    font-family:'Cormorant Garamond',serif;
 
     font-size:28px;
 
-    color:#F5F0DA;
+    color:var(--title);
 
 }
 
@@ -98,50 +159,8 @@ h1{
 
     margin-top:15px;
 
-    font-family:"Times New Roman",serif;
-
     font-size:34px;
 
-    color:#F5F0DA;
-
-}
-
-.menu{
-
-    margin-top:50px;
-
-    display:grid;
-
-    gap:15px;
-
-}
-
-.menu button{
-
-    background:#B5161B;
-
-    color:#F5F0DA;
-
-    border:none;
-
-    border-radius:10px;
-
-    padding:18px;
-
-    font-family:'Bebas Neue',sans-serif;
-
-    font-size:26px;
-
-    letter-spacing:2px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-.menu button:hover{
-
-    background:#8F1015;
+    font-weight:600;
 
 }
