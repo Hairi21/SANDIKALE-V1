@@ -7,3 +7,26 @@ menuButton.onclick = function(){
     sidebar.classList.toggle("active");
 
 };
+const menuButton = document.getElementById("menuButton");
+const sidebar = document.getElementById("sidebar");
+
+menuButton.onclick = function () {
+    sidebar.classList.toggle("active");
+};
+
+// ===== MODAL TAMBAH PRODUK =====
+const openModal = document.getElementById("openModal");
+const closeModal = document.getElementById("closeModal");
+const productModal = document.getElementById("productModal");
+
+if (openModal && closeModal && productModal) {
+
+    openModal.onclick = function () {
+        productModal.classList.add("active");
+    };
+
+    closeModal.onclick = function () {
+        productModal.classList.remove("active");
+    };
+
+}
