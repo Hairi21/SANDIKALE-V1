@@ -208,53 +208,6 @@ tampilProduk();
     };
 
 }
-// DATABASE PRODUK
-let daftarProduk =
-    JSON.parse(localStorage.getItem("produk")) || [];
-
-const saveProduct = document.getElementById("saveProduct");
-
-if (saveProduct) {
-
-    saveProduct.onclick = function () {
-
-        const input = productModal.querySelectorAll("input");
-
-        const kode = input[0].value.trim();
-        const nama = input[1].value.trim();
-        const kategori = kategoriProduk.value;
-        const harga = input[2].value;
-        const stok = input[3].value;
-
-        if (
-            kode === "" ||
-            nama === "" ||
-            kategori === "" ||
-            harga === "" ||
-            stok === ""
-        ) {
-            alert("Semua data wajib diisi!");
-            return;
-        }
-
-        daftarProduk.push({
-            kode,
-            nama,
-            kategori,
-            harga,
-            stok,
-            status: "Aktif"
-        });
-
-        localStorage.setItem(
-            "produk",
-            JSON.stringify(daftarProduk)
-        );
-tampilProduk();
-        alert("Produk berhasil disimpan");
-
-        productModal.classList.remove("active");
-    };
 
 }
 function tampilProduk() {
