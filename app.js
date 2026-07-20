@@ -276,14 +276,17 @@ const stok = document.getElementById("stokProduk").value;
        if (editIndex === -1) {
 
     // Tambah produk baru
-    daftarProduk.push({
-        kode,
-        nama,
-        kategori,
-        harga,
-        stok,
-        status: "Aktif"
-    });
+  daftarProduk.push({
+    kode,
+    nama,
+    kategori,
+    warna,
+    ukuran,
+    lengan,
+    harga,
+    stok,
+    status:"Aktif"
+});
 
 } else {
 
