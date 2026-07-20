@@ -6,7 +6,21 @@
 // DATABASE
 let daftarKategori =
 JSON.parse(localStorage.getItem("kategori")) || [];
+// =========================
+// DATABASE TRANSAKSI
+// =========================
 
+let daftarTransaksi =
+JSON.parse(localStorage.getItem("transaksi")) || [];
+
+function simpanTransaksi(){
+
+    localStorage.setItem(
+        "transaksi",
+        JSON.stringify(daftarTransaksi)
+    );
+
+}
 let daftarProduk =
 JSON.parse(localStorage.getItem("produk")) || [];
 
