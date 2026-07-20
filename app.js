@@ -357,7 +357,7 @@ function hapusProduk(index){
     tampilProduk();
 
 }
-
+window.editProduk = editProduk;
 window.hapusProduk = hapusProduk;
 
 tampilProduk();
