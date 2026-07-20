@@ -258,12 +258,16 @@ const ukuran = document.getElementById("ukuranProduk").value;
 const lengan = document.getElementById("lenganProduk").value;
 const harga = document.getElementById("hargaProduk").value;
 const stok = document.getElementById("stokProduk").value;
-        if (
-            kode === "" ||
-            nama === "" ||
-            kategori === "" ||
-            harga === "" ||
-            stok === ""
+      if (
+    kode === "" ||
+    nama === "" ||
+    kategori === "" ||
+    warna === "" ||
+    ukuran === "" ||
+    lengan === "" ||
+    harga === "" ||
+    stok === ""
+)
         ) {
             alert("Lengkapi semua data!");
             return;
