@@ -851,8 +851,8 @@ ${item.qty} x Rp ${item.harga.toLocaleString("id-ID")}
         });
 
         const customer =
-        document.getElementById("customerKasir").value ||
-        "Pelanggan Umum";
+document.getElementById("pilihCustomer").value ||
+"Pelanggan Umum";
 
         const bayar =
         Number(document.getElementById("bayar").value);
@@ -877,12 +877,9 @@ KEMBALI  : Rp ${kembali.toLocaleString("id-ID")}
 Terima kasih
 `;
 
-        const win = window.open("", "_blank");
+ const win = window.open("", "_blank");
 
-        win.document.write("<pre>" + nota + "</pre>");
-
-        win.print();
-
-    };
-
-}
+win.document.write("<pre>" + nota + "</pre>");
+win.document.close();
+win.focus();
+win.print();       
