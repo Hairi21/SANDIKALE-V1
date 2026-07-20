@@ -252,12 +252,12 @@ if (saveProduct) {
 
     saveProduct.onclick = function () {
 
-        const kode = document.getElementById("kodeProduk").value.trim();
-        const nama = document.getElementById("namaProduk").value.trim();
-        const kategori = document.getElementById("kategoriProduk").value;
-        const harga = document.getElementById("hargaProduk").value;
-        const stok = document.getElementById("stokProduk").value;
-
+const kategori = document.getElementById("kategoriProduk").value;
+const warna = document.getElementById("warnaProduk").value;
+const ukuran = document.getElementById("ukuranProduk").value;
+const lengan = document.getElementById("lenganProduk").value;
+const harga = document.getElementById("hargaProduk").value;
+const stok = document.getElementById("stokProduk").value;
         if (
             kode === "" ||
             nama === "" ||
