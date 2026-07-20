@@ -251,9 +251,10 @@ const saveProduct = document.getElementById("saveProduct");
 if (saveProduct) {
 
     saveProduct.onclick = function () {
-
+const kode = document.getElementById("kodeProduk").value.trim();
+const nama = document.getElementById("namaProduk").value.trim();
 const kategori = document.getElementById("kategoriProduk").value;
-const warna = document.getElementById("warnaProduk").value;
+const warna = document.getElementById("warnaProduk").value.trim();
 const ukuran = document.getElementById("ukuranProduk").value;
 const lengan = document.getElementById("lenganProduk").value;
 const harga = document.getElementById("hargaProduk").value;
