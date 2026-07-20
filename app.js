@@ -268,8 +268,7 @@ const stok = document.getElementById("stokProduk").value;
     lengan === "" ||
     harga === "" ||
     stok === ""
-)
-      {
+) {
             alert("Lengkapi semua data!");
             return;
         }
@@ -314,9 +313,11 @@ tampilProduk();
 document.getElementById("kodeProduk").value = "";
 document.getElementById("namaProduk").value = "";
 document.getElementById("kategoriProduk").value = "";
+document.getElementById("warnaProduk").value = "";
+document.getElementById("ukuranProduk").value = "";
+document.getElementById("lenganProduk").value = "";
 document.getElementById("hargaProduk").value = "";
 document.getElementById("stokProduk").value = "";
-
 document.getElementById("productModal").classList.remove("active");
     };
 
@@ -373,6 +374,9 @@ function editProduk(index){
     document.getElementById("kodeProduk").value = produk.kode;
     document.getElementById("namaProduk").value = produk.nama;
     document.getElementById("kategoriProduk").value = produk.kategori;
+    document.getElementById("warnaProduk").value = produk.warna || "";
+    document.getElementById("ukuranProduk").value = produk.ukuran || "";
+    document.getElementById("lenganProduk").value = produk.lengan || "";
     document.getElementById("hargaProduk").value = produk.harga;
     document.getElementById("stokProduk").value = produk.stok;
 
