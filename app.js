@@ -717,7 +717,81 @@ function tampilKeranjang(){
     "Rp " + total.toLocaleString("id-ID");
 
 }
+// =========================
+// SIMPAN TRANSAKSI
+// =========================
 
+const simpanTransaksiBtn =
+document.getElementById("simpanTransaksi");
+
+if(simpanTransaksiBtn){
+
+    simpanTransaksiBtn.onclick = function(){
+
+        if(keranjang.length===0){
+
+            alert("Keranjang masih kosong!");
+            return;
+
+        }
+
+        let total = 0;
+
+        keranjang.forEach(function(item){
+
+            total += item.qty * item.harga;
+
+            // Kurangi stok produk
+            daftarProduk.forEach(function(produk){
+
+                if(produk.nama===item.nama){
+
+                    produk.stok =
+                    Number(produk.stok)-item.qty;
+
+                }
+
+            });
+
+        });
+
+        const transaksi = {
+
+            tanggal: new Date().toLocaleString("id-ID"),
+
+            customer:
+            pilihCustomer.value || "Pelanggan Umum",
+
+            item: keranjang,
+
+            total: total,
+
+            bayar:
+            Number(document.getElementById("bayar").value||0),
+
+            kembali:
+            Number(document.getElementById("bayar").value||0)-total
+
+        };
+
+        daftarTransaksi.push(transaksi);
+
+        simpanTransaksi();
+        simpanProduk();
+
+        alert("Transaksi berhasil disimpan!");
+
+        keranjang = [];
+
+        tampilKeranjang();
+
+        document.getElementById("bayar").value="";
+
+        document.getElementById("kembalian").innerHTML="Rp 0";
+
+    };
+
+}
 // Hitung kembalian
 const bayar =
 document.getElementById("bayar");
