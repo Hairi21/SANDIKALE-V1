@@ -729,3 +729,131 @@ if(bayar){
     };
 
 }
+// =========================
+// CETAK NOTA
+// =========================
+
+const printNota = document.getElementById("printNota");
+
+if(printNota){
+
+    printNota.onclick = function(){
+
+        let total = 0;
+        let isi = "";
+
+        keranjang.forEach(function(item){
+
+            const subtotal = item.qty * item.harga;
+
+            total += subtotal;
+
+            isi += `
+                <tr>
+                    <td>${item.nama}</td>
+                    <td>${item.qty}</td>
+                    <td>Rp ${subtotal.toLocaleString("id-ID")}</td>
+                </tr>
+            `;
+
+        });
+
+        const customer =
+        pilihCustomer.value || "Pelanggan Umum";
+
+        const bayar =
+        document.getElementById("bayar").value || 0;
+
+        const kembali =
+        Number(bayar) - total;
+
+        const win = window.open("","","width=350,height=700");
+
+        win.document.write(`
+<html>
+<head>
+
+<title>Nota</title>
+
+<style>
+
+body{
+font-family:Arial;
+padding:20px;
+font-size:14px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:10px;
+}
+
+td{
+padding:4px;
+}
+
+h2{
+text-align:center;
+margin-bottom:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>SANDIKALE</h2>
+
+<hr>
+
+<p>
+Customer : ${customer}
+</p>
+
+<p>
+Tanggal :
+${new Date().toLocaleString("id-ID")}
+</p>
+
+<table>
+
+${isi}
+
+</table>
+
+<hr>
+
+<b>Total :
+Rp ${total.toLocaleString("id-ID")}</b>
+
+<br><br>
+
+Bayar :
+Rp ${Number(bayar).toLocaleString("id-ID")}
+
+<br>
+
+Kembali :
+Rp ${kembali.toLocaleString("id-ID")}
+
+<br><br>
+
+<center>
+
+Terima kasih
+
+</center>
+
+</body>
+
+</html>
+`);
+
+        win.document.close();
+        win.print();
+
+    };
+
+}
