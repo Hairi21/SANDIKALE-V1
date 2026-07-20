@@ -394,3 +394,161 @@ window.editProduk = editProduk;
 window.hapusProduk = hapusProduk;
 
 tampilProduk();
+// =========================
+// MASTER CUSTOMER
+// =========================
+
+let daftarCustomer =
+JSON.parse(localStorage.getItem("customer")) || [];
+
+function simpanCustomer(){
+    localStorage.setItem(
+        "customer",
+        JSON.stringify(daftarCustomer)
+    );
+}
+
+const customerModal =
+document.getElementById("customerModal");
+
+const openCustomerModal =
+document.getElementById("openCustomerModal");
+
+const closeCustomerModal =
+document.getElementById("closeCustomerModal");
+
+if(openCustomerModal){
+
+    openCustomerModal.onclick=function(){
+
+        customerModal.classList.add("active");
+
+    };
+
+}
+
+if(closeCustomerModal){
+
+    closeCustomerModal.onclick=function(){
+
+        customerModal.classList.remove("active");
+
+    };
+
+}
+
+const saveCustomer =
+document.getElementById("saveCustomer");
+
+function tampilCustomer(){
+
+    const customerTable =
+    document.getElementById("customerTable");
+
+    if(!customerTable) return;
+
+    customerTable.innerHTML="";
+
+    if(daftarCustomer.length===0){
+
+        customerTable.innerHTML=`
+        <tr>
+            <td colspan="6" class="empty">
+                Belum ada customer
+            </td>
+        </tr>`;
+
+        return;
+    }
+
+    daftarCustomer.forEach(function(customer,index){
+
+        customerTable.innerHTML+=`
+        <tr>
+
+            <td>${customer.kode}</td>
+
+            <td>${customer.nama}</td>
+
+            <td>${customer.telepon}</td>
+
+            <td>${customer.alamat}</td>
+
+            <td>${customer.status}</td>
+
+            <td>
+
+                <button onclick="hapusCustomer(${index})">
+                    Hapus
+                </button>
+
+            </td>
+
+        </tr>`;
+
+    });
+
+}
+
+if(saveCustomer){
+
+    saveCustomer.onclick=function(){
+
+        const kode =
+        document.getElementById("kodeCustomer").value.trim();
+
+        const nama =
+        document.getElementById("namaCustomer").value.trim();
+
+        const telepon =
+        document.getElementById("teleponCustomer").value.trim();
+
+        const alamat =
+        document.getElementById("alamatCustomer").value.trim();
+
+        if(kode==="" || nama===""){
+
+            alert("Kode dan Nama wajib diisi!");
+
+            return;
+
+        }
+
+        daftarCustomer.push({
+
+            kode,
+            nama,
+            telepon: telepon || "-",
+            alamat: alamat || "-",
+            status:"Aktif"
+
+        });
+
+        simpanCustomer();
+
+        tampilCustomer();
+
+        customerModal.classList.remove("active");
+
+        document.getElementById("kodeCustomer").value="";
+        document.getElementById("namaCustomer").value="";
+        document.getElementById("teleponCustomer").value="";
+        document.getElementById("alamatCustomer").value="";
+
+    };
+
+}
+
+function hapusCustomer(index){
+
+    daftarCustomer.splice(index,1);
+
+    simpanCustomer();
+
+    tampilCustomer();
+
+}
+
+window.hapusCustomer = hapusCustomer;
+
+tampilCustomer();
