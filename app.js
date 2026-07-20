@@ -269,7 +269,7 @@ const stok = document.getElementById("stokProduk").value;
     harga === "" ||
     stok === ""
 )
-        ) {
+         {
             alert("Lengkapi semua data!");
             return;
         }
