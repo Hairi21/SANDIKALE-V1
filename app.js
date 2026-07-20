@@ -945,3 +945,70 @@ Terima kasih
     };
 
 }
+// =========================
+// CETAK NOTA
+// =========================
+
+const printNota = document.getElementById("printNota");
+
+if (printNota) {
+
+    printNota.onclick = function () {
+
+        if (keranjang.length === 0) {
+            alert("Keranjang masih kosong!");
+            return;
+        }
+
+        let total = 0;
+        let isi = "";
+
+        keranjang.forEach(function(item){
+
+            const subtotal = item.qty * item.harga;
+            total += subtotal;
+
+            isi += `
+${item.nama}
+${item.qty} x Rp ${item.harga.toLocaleString("id-ID")}
+= Rp ${subtotal.toLocaleString("id-ID")}
+
+`;
+        });
+
+        const customer =
+        document.getElementById("customerKasir").value ||
+        "Pelanggan Umum";
+
+        const bayar =
+        Number(document.getElementById("bayar").value);
+
+        const kembali = bayar - total;
+
+        const nota = `
+========================
+      SANDIKALE
+========================
+
+Customer :
+${customer}
+
+${isi}
+
+------------------------
+TOTAL    : Rp ${total.toLocaleString("id-ID")}
+BAYAR    : Rp ${bayar.toLocaleString("id-ID")}
+KEMBALI  : Rp ${kembali.toLocaleString("id-ID")}
+
+Terima kasih
+`;
+
+        const win = window.open("", "_blank");
+
+        win.document.write("<pre>" + nota + "</pre>");
+
+        win.print();
+
+    };
+
+}
