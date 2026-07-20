@@ -264,8 +264,6 @@ const stok = document.getElementById("stokProduk").value;
     nama === "" ||
     kategori === "" ||
     warna === "" ||
-    ukuran === "" ||
-    lengan === "" ||
     harga === "" ||
     stok === ""
 ) {
@@ -281,8 +279,8 @@ const stok = document.getElementById("stokProduk").value;
     nama,
     kategori,
     warna,
-    ukuran,
-    lengan,
+ukuran: ukuran || "-",
+lengan: lengan || "-",
     harga,
     stok,
     status:"Aktif"
@@ -291,13 +289,13 @@ const stok = document.getElementById("stokProduk").value;
 } else {
 
     // Update produk yang diedit
-  daftarProduk[editIndex] = {
+daftarProduk[editIndex] = {
     kode,
     nama,
     kategori,
     warna,
-    ukuran,
-    lengan,
+    ukuran: ukuran || "-",
+    lengan: lengan || "-",
     harga,
     stok,
     status: daftarProduk[editIndex].status
