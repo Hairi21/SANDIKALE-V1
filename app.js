@@ -475,9 +475,7 @@ function tampilCustomer(){
         return;
     }
 
-    pilihCustomer.innerHTML = `
-<option value="">Pelanggan Umum (Non Member)</option>
-`;.forEach(function(customer,index){
+    daftarCustomer.forEach(function(customer,index){
 
         customerTable.innerHTML+=`
         <tr>
