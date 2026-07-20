@@ -50,9 +50,7 @@ if(menuButton && sidebar){
 const openModal = document.getElementById("openModal");
 const closeModal = document.getElementById("closeModal");
 const productModal = document.getElementById("productModal");
-alert(openModal);
-alert(closeModal);
-alert(productModal);
+
 if (openModal && productModal) {
 
     openModal.onclick = function () {
