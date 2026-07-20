@@ -883,3 +883,6 @@ win.document.write("<pre>" + nota + "</pre>");
 win.document.close();
 win.focus();
 win.print();       
+    };
+
+}
