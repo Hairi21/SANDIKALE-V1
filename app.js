@@ -575,17 +575,20 @@ tampilCustomer();
 let keranjang = [];
 
 // Ambil Customer
-const customerKasir = document.getElementById("customerKasir");
+const pilihCustomer =
+document.getElementById("pilihCustomer");
 
-if (customerKasir) {
+if(pilihCustomer){
 
-    customerKasir.innerHTML =
-        '<option value="">Pilih Customer</option>';
+    pilihCustomer.innerHTML =
+    `<option value="">
+    Pelanggan Umum (Non Member)
+    </option>`;
 
     daftarCustomer.forEach(function(customer){
 
-        customerKasir.innerHTML +=
-        `<option value="${customer.nama}">
+        pilihCustomer.innerHTML += `
+        <option value="${customer.nama}">
             ${customer.nama}
         </option>`;
 
