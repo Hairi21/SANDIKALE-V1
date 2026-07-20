@@ -262,14 +262,12 @@ const stok = document.getElementById("stokProduk").value;
       if (
     kode === "" ||
     nama === "" ||
-    kategori === "" ||
-    warna === "" ||
     harga === "" ||
     stok === ""
 ) {
-            alert("Lengkapi semua data!");
-            return;
-        }
+    alert("Kode, Nama, Harga, dan Stok wajib diisi!");
+    return;
+      }
 
        if (editIndex === -1) {
 
