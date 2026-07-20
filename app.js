@@ -291,15 +291,17 @@ const stok = document.getElementById("stokProduk").value;
 } else {
 
     // Update produk yang diedit
-    daftarProduk[editIndex] = {
-        kode,
-        nama,
-        kategori,
-        harga,
-        stok,
-        status: daftarProduk[editIndex].status
-    };
-
+  daftarProduk[editIndex] = {
+    kode,
+    nama,
+    kategori,
+    warna,
+    ukuran,
+    lengan,
+    harga,
+    stok,
+    status: daftarProduk[editIndex].status
+};
     // Reset mode edit
     editIndex = -1;
 }
