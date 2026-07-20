@@ -647,15 +647,25 @@ if(tambahKeranjang){
 
         const produk = daftarProduk[index];
 
-        keranjang.push({
+const item = keranjang.find(function(data){
+    return data.nama === produk.nama;
+});
 
-            nama: produk.nama,
-            harga: Number(produk.harga),
-            qty: 1
+if(item){
 
-        });
+    item.qty++;
 
-        tampilKeranjang();
+}else{
+
+    keranjang.push({
+        nama: produk.nama,
+        harga: Number(produk.harga),
+        qty: 1
+    });
+
+}
+
+tampilKeranjang();
 
     };
 
