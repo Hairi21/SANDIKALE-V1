@@ -427,15 +427,29 @@ if(openCustomerModal){
 
 }
 
-if(closeCustomerModal){
+if (openCustomerModal && customerModal) {
 
-    closeCustomerModal.onclick=function(){
-
-        customerModal.classList.remove("active");
-
+    openCustomerModal.onclick = function () {
+        customerModal.classList.add("active");
     };
 
 }
+
+if (closeCustomerModal && customerModal) {
+
+    closeCustomerModal.onclick = function () {
+        customerModal.classList.remove("active");
+    };
+
+}
+
+window.addEventListener("click", function (e) {
+
+    if (e.target === customerModal) {
+        customerModal.classList.remove("active");
+    }
+
+});
 
 const saveCustomer =
 document.getElementById("saveCustomer");
