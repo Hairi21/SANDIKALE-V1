@@ -318,11 +318,17 @@ function tampilProduk() {
             <td>Rp ${Number(produk.harga).toLocaleString("id-ID")}</td>
             <td>${produk.stok}</td>
             <td>${produk.status}</td>
-            <td>
-                <button onclick="hapusProduk(${index})">
-                    Hapus
-                </button>
-            </td>
+<td>
+
+    <button onclick="editProduk(${index})">
+        Edit
+    </button>
+
+    <button onclick="hapusProduk(${index})">
+        Hapus
+    </button>
+
+</td>
         </tr>`;
     });
 
