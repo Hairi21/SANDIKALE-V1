@@ -333,7 +333,21 @@ function tampilProduk() {
     });
 
 }
+function editProduk(index){
 
+    const produk = daftarProduk[index];
+
+    document.getElementById("kodeProduk").value = produk.kode;
+    document.getElementById("namaProduk").value = produk.nama;
+    document.getElementById("kategoriProduk").value = produk.kategori;
+    document.getElementById("hargaProduk").value = produk.harga;
+    document.getElementById("stokProduk").value = produk.stok;
+
+    editIndex = index;
+
+    productModal.classList.add("active");
+
+}
 function hapusProduk(index){
 
     daftarProduk.splice(index,1);
