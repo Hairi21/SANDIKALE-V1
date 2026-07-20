@@ -566,3 +566,163 @@ function hapusCustomer(index){
 window.hapusCustomer = hapusCustomer;
 
 tampilCustomer();
+// =========================
+// KASIR
+// =========================
+
+let keranjang = [];
+
+// Ambil Customer
+const customerKasir = document.getElementById("customerKasir");
+
+if (customerKasir) {
+
+    customerKasir.innerHTML =
+        '<option value="">Pilih Customer</option>';
+
+    daftarCustomer.forEach(function(customer){
+
+        customerKasir.innerHTML +=
+        `<option value="${customer.nama}">
+            ${customer.nama}
+        </option>`;
+
+    });
+
+}
+
+// Ambil Produk
+const pilihProduk = document.getElementById("pilihProduk");
+
+if (pilihProduk) {
+
+    pilihProduk.innerHTML =
+        '<option value="">Pilih Produk</option>';
+
+    daftarProduk.forEach(function(produk,index){
+
+        pilihProduk.innerHTML +=
+        `<option value="${index}">
+            ${produk.nama} - Rp ${Number(produk.harga).toLocaleString("id-ID")}
+        </option>`;
+
+    });
+
+}
+
+// Tombol Tambah
+const tambahKeranjang =
+document.getElementById("tambahKeranjang");
+
+if(tambahKeranjang){
+
+    tambahKeranjang.onclick=function(){
+
+        const index = pilihProduk.value;
+
+        if(index===""){
+
+            alert("Pilih produk");
+
+            return;
+
+        }
+
+        const produk = daftarProduk[index];
+
+        keranjang.push({
+
+            nama: produk.nama,
+            harga: Number(produk.harga),
+            qty: 1
+
+        });
+
+        tampilKeranjang();
+
+    };
+
+}
+
+function tampilKeranjang(){
+
+    const table =
+    document.getElementById("keranjangTable");
+
+    if(!table) return;
+
+    table.innerHTML="";
+
+    let total=0;
+
+    if(keranjang.length===0){
+
+        table.innerHTML=`
+        <tr>
+        <td colspan="4" class="empty">
+        Belum ada produk
+        </td>
+        </tr>`;
+
+        document.getElementById("totalBayar").innerHTML="Rp 0";
+
+        return;
+
+    }
+
+    keranjang.forEach(function(item){
+
+        const subtotal =
+        item.qty * item.harga;
+
+        total += subtotal;
+
+        table.innerHTML += `
+        <tr>
+
+        <td>${item.nama}</td>
+
+        <td>
+        Rp ${item.harga.toLocaleString("id-ID")}
+        </td>
+
+        <td>${item.qty}</td>
+
+        <td>
+        Rp ${subtotal.toLocaleString("id-ID")}
+        </td>
+
+        </tr>`;
+
+    });
+
+    document.getElementById("totalBayar").innerHTML =
+    "Rp " + total.toLocaleString("id-ID");
+
+}
+
+// Hitung kembalian
+const bayar =
+document.getElementById("bayar");
+
+if(bayar){
+
+    bayar.oninput=function(){
+
+        let total=0;
+
+        keranjang.forEach(function(item){
+
+            total += item.qty*item.harga;
+
+        });
+
+        const kembali =
+        Number(this.value)-total;
+
+        document.getElementById("kembalian").innerHTML=
+        "Rp "+kembali.toLocaleString("id-ID");
+
+    };
+
+}
