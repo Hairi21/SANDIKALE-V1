@@ -648,7 +648,7 @@ if(tambahKeranjang){
         const produk = daftarProduk[index];
 
 const item = keranjang.find(function(data){
-    return data.nama === produk.nama;
+    return data.kode === produk.kode;
 });
 
 if(item){
@@ -658,10 +658,11 @@ if(item){
 }else{
 
     keranjang.push({
-        nama: produk.nama,
-        harga: Number(produk.harga),
-        qty: 1
-    });
+    kode: produk.kode,
+    nama: produk.nama,
+    harga: Number(produk.harga),
+    qty: 1
+});
 
 }
 
