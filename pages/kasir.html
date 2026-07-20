@@ -26,7 +26,7 @@
 
 <div class="toolbar">
 
-<select id="pilihCustomer" class="searchBox">
+<select id="customerKasir" class="searchBox">
 <option value="">Pilih Customer</option>
 </select>
 
@@ -60,9 +60,7 @@ Tambah
 <tr>
 
 <td colspan="4" class="empty">
-
 Belum ada produk
-
 </td>
 
 </tr>
@@ -71,14 +69,33 @@ Belum ada produk
 
 </table>
 
-<div style="margin-top:25px;text-align:right;">
+<hr style="margin:25px 0">
 
-<h2 style="color:#E8DFC7">
-Total :
-<span id="totalBayar">
-Rp 0
-</span>
-</h2>
+<div style="display:flex;flex-direction:column;gap:15px;max-width:350px;margin-left:auto;">
+
+<label>Total</label>
+
+<h2 id="totalBayar">Rp 0</h2>
+
+<label>Bayar</label>
+
+<input
+type="number"
+id="bayar"
+class="searchBox"
+placeholder="Masukkan nominal">
+
+<label>Kembalian</label>
+
+<h2 id="kembalian">Rp 0</h2>
+
+<button class="primaryBtn" id="simpanTransaksi">
+Simpan Transaksi
+</button>
+
+<button class="primaryBtn" id="printNota">
+🖨 Cetak Nota
+</button>
 
 </div>
 
