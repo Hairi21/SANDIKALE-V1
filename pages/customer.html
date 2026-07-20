@@ -1,1 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Master Customer | SANDIKALE</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<div class="page">
+
+<h1 class="pageTitle">Master Customer</h1>
+
+<div class="toolbar">
+
+<button class="primaryBtn" id="openCustomerModal">
++ Tambah Customer
+</button>
+
+<input
+type="text"
+class="searchBox"
+placeholder="Cari customer...">
+
+</div>
+
+<div class="tableCard">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Kode</th>
+<th>Nama</th>
+<th>No HP</th>
+<th>Alamat</th>
+<th>Status</th>
+<th>Aksi</th>
+
+</tr>
+
+</thead>
+
+<tbody id="customerTable">
+
+<tr>
+
+<td colspan="6" class="empty">
+
+Belum ada customer
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<!-- MODAL -->
+
+<div class="modal" id="customerModal">
+
+<div class="modalContent">
+
+<h2>Tambah Customer</h2>
+
+<input
+type="text"
+id="kodeCustomer"
+placeholder="Kode Customer">
+
+<input
+type="text"
+id="namaCustomer"
+placeholder="Nama Customer">
+
+<input
+type="text"
+id="teleponCustomer"
+placeholder="No HP">
+
+<input
+type="text"
+id="alamatCustomer"
+placeholder="Alamat">
+
+<div class="modalAction">
+
+<button
+class="secondaryBtn"
+id="closeCustomerModal">
+
+Batal
+
+</button>
+
+<button
+class="primaryBtn"
+id="saveCustomer">
+
+Simpan
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="../app.js"></script>
+
+</body>
+</html>
