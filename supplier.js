@@ -2,7 +2,7 @@
 // SANDIKALE POS
 // MASTER SUPPLIER
 // =========================
-
+alert("supplier.js berhasil dimuat");
 // Database Supplier
 let daftarSupplier =
 JSON.parse(localStorage.getItem("supplier")) || [];
