@@ -23,7 +23,17 @@ function simpanTransaksi(){
 }
 let daftarProduk =
 JSON.parse(localStorage.getItem("produk")) || [];
+let daftarSupplier =
+JSON.parse(localStorage.getItem("supplier")) || [];
 
+function simpanSupplier(){
+
+    localStorage.setItem(
+        "supplier",
+        JSON.stringify(daftarSupplier)
+    );
+
+}
 function simpanKategori(){
     localStorage.setItem(
         "kategori",
