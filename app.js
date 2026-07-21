@@ -131,6 +131,45 @@ window.addEventListener("click",function(e){
 
 });
 // =========================
+// MODAL SUPPLIER
+// =========================
+
+const supplierModal = document.getElementById("supplierModal");
+
+const openSupplierModal = document.getElementById("openSupplierModal");
+
+const closeSupplierModal = document.getElementById("closeSupplierModal");
+
+if (openSupplierModal && supplierModal) {
+
+    openSupplierModal.onclick = function () {
+
+        supplierModal.classList.add("active");
+
+    };
+
+}
+
+if (closeSupplierModal && supplierModal) {
+
+    closeSupplierModal.onclick = function () {
+
+        supplierModal.classList.remove("active");
+
+    };
+
+}
+
+window.addEventListener("click", function (e) {
+
+    if (e.target === supplierModal) {
+
+        supplierModal.classList.remove("active");
+
+    }
+
+});
+// =========================
 // MASTER KATEGORI
 // =========================
 
